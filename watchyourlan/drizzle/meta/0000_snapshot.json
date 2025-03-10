@@ -1,0 +1,146 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "id": "32efff45-0af3-4a34-a463-780b9c196f63",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "now": {
+      "name": "now",
+      "columns": {
+        "ID": {
+          "name": "ID",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "NAME": {
+          "name": "NAME",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "HOST_NAME": {
+          "name": "HOST_NAME",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "IP": {
+          "name": "IP",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "MAC": {
+          "name": "MAC",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "HW": {
+          "name": "HW",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DATE": {
+          "name": "DATE",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "KNOWN": {
+          "name": "KNOWN",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        },
+        "NOW": {
+          "name": "NOW",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": 0
+        }
+      },
+      "indexes": {
+        "now_ID_unique": {
+          "name": "now_ID_unique",
+          "columns": [
+            "ID"
+          ],
+          "isUnique": true
+        },
+        "now_IP_unique": {
+          "name": "now_IP_unique",
+          "columns": [
+            "IP"
+          ],
+          "isUnique": true
+        },
+        "now_MAC_unique": {
+          "name": "now_MAC_unique",
+          "columns": [
+            "MAC"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {
+    "hosts": {
+      "columns": {
+        "IP": {
+          "name": "IP",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "HOST_NAME": {
+          "name": "HOST_NAME",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "''"
+        },
+        "NAME": {
+          "name": "NAME",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "name": "hosts",
+      "isExisting": false,
+      "definition": "select \"IP\", \"HOST_NAME\", \"NAME\" from \"now\" where (\"now\".\"IP\" is not null and \"now\".\"HOST_NAME\" is not null and \"now\".\"NAME\" is not null)"
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "indexes": {}
+  }
+}
