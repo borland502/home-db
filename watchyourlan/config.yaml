@@ -1,0 +1,16 @@
+arp_timeout: "500"
+auth: false
+auth_expire: 7d
+auth_password: ""
+auth_user: ""
+color: dark
+dbpath: /data/db.sqlite
+guiip: 0.0.0.0
+guiport: "8840"
+history_days: "30"
+iface: eth0
+ignoreip: "no"
+loglevel: verbose
+shoutrrr_url: ""
+theme: spacelab
+timeout: 60

@@ -1,0 +1,9 @@
+version: "3"
+
+dotenv:
+  - .env
+
+includes:
+  wyl:
+    taskfile: ./watchyourlan/Taskfile.yaml
+    dir: ./watchyourlan

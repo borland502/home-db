@@ -1,0 +1,12 @@
+version: "3"
+
+tasks:
+  drizzle-sync:
+    desc: "Sync the database with the latest schema"
+    cmds:
+      - mkdir -p ${DATABASE_DIR}
+      - bunx drizzle-kit push --url ${DATABASE_URL} --schema ./db/schema.ts --dialect sqlite
+    dir: ./src
+    env:
+      DATABASE_DIR: ${XDG_CACHE_HOME}/watchyourlan
+      DATABASE_URL: ${DATABASE_DIR}/db.sqlite
